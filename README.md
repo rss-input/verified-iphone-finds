@@ -1,15 +1,19 @@
 # Verifizierte iPhone-Treffer
 
-Statischer Atom-Feed für neue, aktuell kaufbare iPhones mit gerätespezifisch verifizierter Firmware.
+Automatisch aktualisierter Atom-Feed für neue, aktuell kaufbare iPhones mit gerätespezifisch verifizierter Firmware.
 
 - Feed: `feed.xml`
 - Kleine Landingpage: `index.html`
 - Feed-URL: `https://raw.githubusercontent.com/rss-input/verified-iphone-finds/main/feed.xml`
+- Aktualisierung: automatisch alle zwei Stunden
 
-## Einen Treffer ergänzen
+## Recherchen
 
-1. Den neuen `<entry>`-Block direkt unter `<author>` einfügen, damit der neueste Treffer oben steht.
-2. Eine dauerhaft eindeutige `<id>` verwenden, bevorzugt mit Händler und Artikelnummer.
-3. `<updated>` im Feed-Kopf sowie `<published>` und `<updated>` des Eintrags im ISO-8601-Format setzen.
-4. Sonderzeichen in Attributen und URLs XML-gerecht maskieren, insbesondere `&amp;`.
-5. Vor dem Veröffentlichen prüfen, dass `feed.xml` wohlgeformtes XML ist.
+- **Recherche A:** iPhone 15/16/17 Pro und Pro Max ab 256 GB, exakt iOS 26.0 oder 26.0.1.
+- **Recherche B:** iPhone 15 Pro und Pro Max ab 256 GB, iOS 17.0 bis einschließlich 17.3.1.
+
+Aufgenommen werden nur konkrete, aktuell kaufbare Angebote mit gerätespezifischem Firmware-Nachweis. Verkaufte, reservierte, abgelaufene oder nicht direkt verifizierbare Kandidaten werden ausgeschlossen. Angebotsnummern, URLs und Cross-Listings werden dedupliziert.
+
+## Automatische Pflege
+
+Ein aktiver Codex-Heartbeat führt beide weltweiten Recherchen fort und aktualisiert `feed.xml` direkt auf dem Hauptzweig. Der Feed-Zeitstempel ändert sich nur bei echten neuen Einträgen.
